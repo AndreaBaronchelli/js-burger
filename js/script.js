@@ -8,9 +8,21 @@ var button = document.getElementById("button");
 var ingredient = document.getElementsByClassName("ingredient-checkbox");
 var displayPrice = document.getElementById("price");
 var coupon = document.getElementById("coupon");
-console.log(coupon);
+var add = document.getElementsByClassName("ingredient-add");
+console.log(add);
 //Settings
 var coupons = ["topolino", "pippo", "pluto", "paperino"];
+
+
+//Rendere "Add" cliccabile
+for(var i = 0; i < add.length; i++) {
+    add[i].addEventListener("click", 
+        function() {
+            var thisCheckbox = this.previousElementSibling;
+            thisCheckbox.checked = ! thisCheckbox.checked;
+        }
+    );
+}
 
 //Calcola il prezzo
 button.addEventListener("click",
